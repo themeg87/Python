@@ -49,11 +49,14 @@ def predict_all_stocks():
             future_day_scaled = scaler.transform(future_day)
             predicted_price = model.predict(future_day_scaled)[0]
 
+            # 예측된 날짜 계산
+            predicted_date = (pd.to_datetime("2019-01-01") + pd.DateOffset(days=input_day)).strftime("%Y-%m-%d")
+
             # 표에 결과 추가
             tree.insert("", "end", values=(stock, f"${latest_price:.2f}", f"${predicted_price:.2f}", f"${predicted_price - latest_price:.2f}"))
 
             # 로그 기록
-            log_message = f"Stock: {stock}, Latest Price: ${latest_price:.2f}, Predicted Price: ${predicted_price:.2f}, Difference: ${predicted_price - latest_price:.2f}"
+            log_message = f"Stock: {stock}, Predicted Date: {predicted_date}, Latest Price: ${latest_price:.2f}, Predicted Price: ${predicted_price:.2f}, Difference: ${predicted_price - latest_price:.2f}"
             logging.info(log_message)
         except Exception as e:
             error_message = f"Error with stock {stock}: {e}"
