@@ -6,6 +6,11 @@ from sklearn.preprocessing import StandardScaler
 import tkinter as tk
 from tkinter import ttk
 import datetime
+import logging  # 로깅 라이브러리 추가
+
+# 로깅 설정
+logging.basicConfig(filename='stock_prediction.log', level=logging.INFO, format='%(asctime)s - %(message)s')
+
 
 def predict_all_stocks():
     # 표 초기화
@@ -46,8 +51,14 @@ def predict_all_stocks():
 
             # 표에 결과 추가
             tree.insert("", "end", values=(stock, f"${latest_price:.2f}", f"${predicted_price:.2f}", f"${predicted_price - latest_price:.2f}"))
+
+            # 로그 기록
+            log_message = f"Stock: {stock}, Latest Price: ${latest_price:.2f}, Predicted Price: ${predicted_price:.2f}, Difference: ${predicted_price - latest_price:.2f}"
+            logging.info(log_message)
         except Exception as e:
-            print(f"Error with stock {stock}: {e}")
+            error_message = f"Error with stock {stock}: {e}"
+            print(error_message)
+            logging.error(error_message)
 
 # Tkinter 창 설정
 root = tk.Tk()
