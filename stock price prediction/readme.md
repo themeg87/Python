@@ -16,7 +16,7 @@ import datetime
 Program discription   
 predict stock prices   
 
-update : 2024.01.04   
+update : 2024.01.04      
 add log data   
    
 ## :+1:very important:+1:
