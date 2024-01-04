@@ -15,9 +15,11 @@ import datetime
 
 Program discription   
 predict stock prices   
+
+update : 2024.01.04   
+add log data   
    
 ## :+1:very important:+1:
 ## It was created for fun, and users are notified in advance that any disadvantages will arise when using it.💥💥💥
 
-update : 2024.01.04
-add log data
+
