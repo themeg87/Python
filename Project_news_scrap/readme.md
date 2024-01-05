@@ -9,5 +9,8 @@ from bs4 import BeautifulSoup
 import logging
 
 Program discription   
-CNNNewsScrap📰
+CNNNewsScrap📰   
+
+Update : 2024.01.05   
+log and save csv   
 
