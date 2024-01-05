@@ -12,5 +12,5 @@ Program discription
 CNNNewsScrap📰   
 
 Update : 2024.01.05   
-log and save csv   
+log and save csv🗞️   
 
